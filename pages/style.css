@@ -1,0 +1,441 @@
+body{
+ background-color: #EEEEEE;
+  overflow-x: hidden;
+}
+
+::selection {
+  color: #00ADB5;
+  background-color:  #303841d8 ;
+
+}
+
+
+.homeColor{
+  background-color: #00ADB5;
+}
+
+.projectColor{
+   background-color: #FFC898;
+}
+
+.contactColor{
+
+   background-color: #71EFA3;
+}
+
+/* Contact Us Component */
+
+div .contactUs{
+ position: absolute;
+ left:0%;
+ bottom:25%;
+ animation: contactAnimate 1500ms ease-in-out 0s 1 forwards ;
+}
+
+@keyframes contactAnimate {
+  0%{
+    transform: translateX(-50px);
+  }100%{
+    transform: translateX(0px);
+  }
+
+}
+
+
+/* Header */
+
+.lockOverflow{
+  overflow: hidden;
+}
+
+
+.AnimateUp{
+   animation: slideFromUp 1s ease-out 0s 1 forwards ;
+}
+
+@keyframes slideFromUp {
+  0%{
+
+    transform: translateY(-100vh);
+  }
+  100%{
+
+    transform: translateY(0vh);
+  }
+  
+}
+
+.delayAnimate{
+ opacity: 0;
+ animation: flicker 1s linear 2500ms 1 forwards ;
+}
+
+@keyframes  flicker{
+  0%{
+    opacity: 0;
+  }
+  10%{
+    opacity: 1;
+    text-shadow: 2px 2px 20px #EEEEEE;
+
+  }
+  15%{
+    opacity: 0;
+
+  }
+  20%{
+    opacity: 1;
+    text-shadow: 2px 2px 20px #EEEEEE;
+  }
+  25%{
+    opacity: 0;
+
+  }
+   30%{
+    opacity: 1;
+     text-shadow: 2px 2px 20px #EEEEEE;
+  }
+  40%{
+    opacity: 0;
+  }
+  99%{
+    opacity: 0;
+  }
+
+  100%{
+      opacity: 1;
+
+  }
+}
+
+.animateRotate{
+ opacity: 0;
+ animation: scaleIn 1s ease-in-out 1s 1 forwards ;
+}
+
+.slideDown{
+ animation: scaleIn 1s ease-in-out 1s 1 forwards ;
+}
+
+
+.imageContain{
+ width: 70vw;
+}
+
+.animateHead{
+ animation: nod 1s ease-in-out 5s infinite alternate ;
+}
+
+.slideRight{
+opacity: 0;
+ animation: scaleIn 1s ease-in-out 1s 1 forwards ;
+}
+
+@keyframes  scaleIn{
+ 0%{
+  transform: scale(0);
+  opacity: 0;
+ }
+
+ 100%{
+  transform: scale(1);
+  opacity: 1;
+ }
+}
+
+@keyframes nod {
+  0%{
+    transform: translateY(0px);
+
+  }
+
+ 100%{
+  transform: translateY(-10px);
+ }
+}
+
+
+
+/* Projects */
+
+
+div .webFrame{
+ width: 40vw;
+}
+
+
+/* Navbar */
+
+
+.navBar{
+  opacity: 0;
+  animation: slideUp 2s ease-in-out 0s 1 forwards ;
+}
+
+@keyframes slideUp {
+
+  0%{
+    transform: translateY(-100px);
+  }
+
+   100%{
+     opacity: 1;
+    transform: translateY(0px);
+  }
+  
+}
+
+div .activePage{
+  transform: scale(1.05);
+  color:#EEEEEE;
+}
+
+
+div .activeIcon{
+  border-radius: 2px;
+  color:#EEEEEE;
+  width: 2.5rem;
+}
+
+
+div .passiveIcon{
+  border-radius: 2px;
+  color:#303841;
+  width: 2.5rem;
+}
+
+div .navIcon{
+  transition: all 500ms ease-in-out;
+}
+
+div .navIcon:hover{
+  box-shadow: 2px 2px 15px #EEEEEE;
+  color:#EEEEEE;
+  transform: scale(1.1);
+}
+
+
+/* projects */
+
+div .projects{
+  background: #FFC898;
+  min-height: 100vh;
+  height: 100%;
+}
+
+div .AnimateLeft{
+ 
+  animation: slidefromLeft 1s ease-out 0s 1 forwards ;
+}
+
+div .AnimateRight{
+  animation: slidefromRight 1s ease-out 0s 1 forwards ;
+}
+
+@keyframes slidefromLeft {
+   0%{
+    transform: translateX(-100%);
+  }
+
+   100%{
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slidefromRight {
+   0%{
+    transform: translateX(100%);
+  }
+
+   100%{
+    transform: translateX(0%);
+  }
+}
+
+
+div .projectContainer{
+  width: 36rem;
+  height: 18rem;
+  
+}
+
+div .imageHover{
+  position: relative;
+  z-index: 1;
+  transition: transform ease 1s;
+}
+
+div .imageHover:hover{
+
+  transform: scale(1.05);
+}
+
+
+div .overlay{
+  position: absolute;
+  top:0%;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  background-blend-mode: darken;
+}
+
+
+@keyframes FadeIn {
+   0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+div .animateFadeIn{
+    animation: FadeIn 500ms ease-in-out 0s 1 forwards;
+}
+
+div .animateFadeOut{
+   opacity: 0.9;
+  animation: FadeOut 500ms ease-in-out 0s 1 forwards;
+}
+
+@keyframes FadeOut {
+   0%{
+     opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+  
+}
+
+
+section .slideDown{
+   opacity: 0;
+   animation: titleFade 500ms ease-in-out 1s 1 forwards;
+}
+
+
+@keyframes titleFade {
+  0%{
+    transform: translateY(-500px);
+  }
+  100%{
+     transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+
+
+
+/* contact */
+
+
+div .contactWindow{
+  min-height: 100vh;
+  height: 100%;
+
+}
+
+div .contactPopup{
+  transition: all ease 1s;
+  transform-style: preserve-3d;
+}
+
+div .contactPopup:hover{
+  transform: scale(1.1);
+}
+
+div .github:hover{
+  color:#333;
+   box-shadow: 2px 2px 15px #333;
+}
+
+div .google:hover{
+  color:#4285F4;
+   box-shadow: 2px 2px 15px #4285F4;
+}
+
+div .instagram:hover{
+  color: #E1306C;
+   box-shadow: 2px 2px 15px #E1306C;
+
+}
+
+div .linkedin:hover{
+  color:#006192;
+  box-shadow: 2px 2px 15px #006192;
+}
+
+div .rotateScale{
+  opacity: 0;
+  animation: rotate 1s ease-in-out 1s 1 forwards;
+  transform-style: preserve-3d;
+}
+
+@keyframes rotate {
+
+  0%{
+    transform: scale(0) rotateZ(0deg);
+     opacity: 0;
+  }
+
+  100%{
+     transform: scale(1) rotateZ(360deg); 
+    opacity: 1;
+
+  }
+  
+}
+
+div .comeFromRight{
+   opacity: 0;
+  animation: fromRight 1s ease-in-out 1s 1 forwards;
+}
+
+
+@keyframes fromRight {
+
+  0%{
+    transform: translateX(500px);
+     opacity: 0;
+  }
+
+  80%{
+    transform: translateX(-10px);
+  }
+
+  100%{
+     transform: translateX(0px);
+    opacity: 1;
+
+  }
+  
+}
+
+
+div .comeFromLeft{
+   opacity: 0;
+  animation: fromLeft 1s ease-in-out 1s 1 forwards;
+}
+
+@keyframes fromLeft {
+
+  0%{
+    transform: translateX(-500px);
+     opacity: 0;
+  }
+
+  80%{
+    transform: translateX(10px);
+  }
+
+  100%{
+     transform: translateX(0px);
+    opacity: 1;
+
+  }
+  
+}
