@@ -23,7 +23,7 @@ export default function HomeSection () {
               Hey,
             </p>
             <h2 className='text-dark font-light text-8xl py-4 RotateToPlace'>
-              I'm <span className='text-light flickingAnimation '>Bharath</span>{' '}
+             I am <span className='text-light flickingAnimation '>Bharath</span>
             </h2>
             <p className='text-dark font-normal text-4xl rotate360'>
               Web Designer
