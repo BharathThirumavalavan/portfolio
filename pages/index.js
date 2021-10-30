@@ -24,8 +24,6 @@ export default function Home() {
        }
       
     }, 1000);
-     console.log(color)
-
 
   }, [isActive])
 
