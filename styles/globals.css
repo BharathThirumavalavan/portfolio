@@ -1,0 +1,566 @@
+:root {
+    --color-light: #EEEEEE;
+    --color-dark: #303841;
+    --color-primary: #00ADB5;
+    --color-secondary: #FF5722;
+    --color-projects: #FFC898;
+    --color-proPrimary: #DBD0C0;
+    --color-proLight: #FAEEE0;
+    --color-contact: #A2D2FF;
+    --color-contactLight: #FEF9EF;
+    --color-contactSec: #FF865E;
+    --color-contactPri: #FEE440;
+    --color-error: #FF7878;
+    --color-errorLight: #F3F0D7;
+    --color-errorPrimary: #CEE5D0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body{
+  overflow-x: hidden;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+::selection {
+  color: var(--color-secondary);
+  background-color:  var(--color-dark) ;
+
+}
+
+.homeColor{
+  position: relative;
+  background-color: var(--color-primary);
+}
+
+.projectColor{
+  position: relative;
+   background-color: var(--color-projects);
+}
+
+.contactColor{
+  position: relative;
+   background-color: var(--color-contact);
+}
+
+
+/* Projects */
+
+.projectContainer{
+  max-width: 100%;
+  width: 40rem;
+  min-height: 18rem;
+  background-color: var(--color-proPrimary);
+}
+
+
+.imgContainer{
+  height: 100%;
+  object-fit: contain;
+}
+
+.detailsContainer{
+  min-width: 16rem;
+}
+
+.projectTitle{
+ font-family: 'Josefin Sans', sans-serif;
+}
+
+
+div .overlay{
+  position: absolute;
+  top:0%;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  background-blend-mode: darken;
+}
+
+/* Animations for Project */
+
+
+div .projects{
+  background: #FFC898;
+  min-height: 100vh;
+  height: 100%;
+}
+
+div .AnimateLeft{
+  animation: slideFromLeft 1s ease-out 0s 1 forwards ;
+}
+
+div .AnimateRight{
+  animation: slideFromRight 1s ease-out 0s 1 forwards ;
+}
+
+@keyframes slideFromLeft {
+   0%{
+    transform: translateX(-100%);
+  }
+
+   100%{
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slideFromRight {
+   0%{
+    transform: translateX(100%);
+  }
+
+   100%{
+    transform: translateX(0%);
+  }
+}
+
+.animateScale{
+ opacity: 0;
+ animation: scaleIn 1s ease-in-out 1s 1 forwards ;
+}
+
+
+@keyframes  scaleIn{
+ 0%{
+  transform: scale(0);
+  opacity: 0;
+ }
+
+ 100%{
+  transform: scale(1);
+  opacity: 1;
+ }
+}
+
+
+
+.slideDown{
+   opacity: 0;
+   animation: titleFade 500ms ease-in-out 1s 1 forwards;
+}
+
+
+@keyframes titleFade {
+  0%{
+    transform: translateY(-500px);
+  }
+  100%{
+     transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+
+div .imageHover{
+   @apply  w-64 ;
+  max-width: 100%;
+  width: 25rem;
+  max-height: 25rem;
+  height: 18rem;
+  position: relative;
+  z-index: 1;
+  transition: transform ease 1s;
+}
+
+div .imageHover:hover{
+
+  transform: scale(1.05);
+}
+
+
+
+@keyframes slideFromUp {
+  0%{
+    transform: translateY(-100vh);
+  }
+  100%{
+    transform: translateY(0vh);
+  }
+}
+
+
+
+div .animateFadeIn{
+    animation: FadeIn 500ms ease-in-out 0s 1 forwards;
+}
+
+div .animateFadeOut{
+  animation: FadeOut 500ms ease-in-out 0s 1 forwards;
+}
+
+@keyframes FadeIn {
+   0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes FadeOut {
+   0%{
+     opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+
+/* ErrorPage */
+
+.errorPage{
+  font-family: 'Josefin Sans', sans-serif;
+  animation: slideFromUp 1s ease 0s 1 forwards ;
+}
+
+.delayAnimate{
+  opacity: 0;
+ animation: skewAnimate 500ms ease-in-out 1s 1 forwards ;
+ transform-style: preserve-3d;
+}
+
+
+
+@keyframes  skewAnimate{
+  0%{
+   opacity: 1;
+    transform: skew(-10deg,-10deg);
+  }
+  15%{
+      transform: skew(10deg,10deg);
+  }
+  30%{
+   transform: skew(-10deg,-10deg);
+  }
+  45%{
+      transform: skew(10deg,10deg);
+  }
+  60%{
+     transform: skew(-5deg,-5deg);
+  }
+  75%{
+     transform: skew(5deg,5deg);
+  }
+  90%{
+     transform: skew(-2deg,-2deg);
+  }
+  100%{
+    opacity: 1;
+    transform: skew(0deg,0deg);
+  }
+}
+
+
+
+/* navBar */
+
+.navBar{
+  opacity: 0;
+  animation: slideUp 2s ease-in-out 0s 1 forwards ;
+}
+
+@keyframes slideUp {
+
+  0%{
+    transform: translateY(-100px);
+  }
+
+   100%{
+     opacity: 1;
+    transform: translateY(0px);
+  }
+  
+}
+
+div .activePage{
+  transform: scale(1.05);
+  color:var(--color-light);
+}
+
+
+div .activeIcon{
+  border-radius: 2px;
+  color:var(--color-light);
+  width: 2.5rem;
+}
+
+
+div .passiveIcon{
+  border-radius: 2px;
+  color: var(--color-dark);
+  width: 2.5rem;
+}
+
+div .navIcon{
+  transition: all 500ms ease-in-out;
+}
+
+div .navIcon:hover{
+  box-shadow: 2px 2px 15px var(--color-light);
+  color:var(--color-light);
+  transform: scale(1.1);
+}
+
+
+
+/* contact us page*/
+
+
+.mainWindow{
+  min-width: 100vw;
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  
+}
+
+div .contactPopup{
+  transition: all ease 1s;
+  transform-style: preserve-3d;
+}
+
+div .contactPopup:hover{
+  transform: scale(1.1);
+}
+
+div .github:hover{
+  color:#333;
+   box-shadow: 2px 2px 15px #333;
+}
+
+div .google:hover{
+  color:#4285F4;
+   box-shadow: 2px 2px 15px #4285F4;
+}
+
+div .instagram:hover{
+  color: #E1306C;
+   box-shadow: 2px 2px 15px #E1306C;
+
+}
+
+div .linkedin:hover{
+  color:#006192;
+  box-shadow: 2px 2px 15px #006192;
+}
+
+div .rotateScale{
+  opacity: 0;
+  animation: rotate 1s ease-in-out 1s 1 forwards;
+  transform-style: preserve-3d;
+}
+
+@keyframes rotate {
+
+  0%{
+    transform: scale(0) rotateZ(0deg);
+     opacity: 0;
+  }
+
+  100%{
+     transform: scale(1) rotateZ(360deg); 
+    opacity: 1;
+
+  }
+  
+}
+
+div .comeFromRight{
+   opacity: 0;
+  animation: fromRight 1s ease-in-out 1s 1 forwards;
+}
+
+
+@keyframes fromRight {
+
+  0%{
+    transform: translateX(500px);
+     opacity: 0;
+  }
+
+  80%{
+    transform: translateX(-10px);
+  }
+
+  100%{
+     transform: translateX(0px);
+    opacity: 1;
+
+  }
+  
+}
+
+
+div .comeFromLeft{
+   opacity: 0;
+  animation: fromLeft 1s ease-in-out 1s 1 forwards;
+}
+
+@keyframes fromLeft {
+
+  0%{
+    transform: translateX(-500px);
+     opacity: 0;
+  }
+
+  80%{
+    transform: translateX(10px);
+  }
+
+  100%{
+     transform: translateX(0px);
+    opacity: 1;
+
+  }
+  
+}
+
+
+/* Home  */
+
+.animateScale{
+ opacity: 0;
+ animation: scaleIn 1s ease-in-out 1s 1 forwards ;
+}
+
+
+.animateHead{
+ animation: nod 1s ease-in-out 5s infinite alternate ;
+}
+
+@keyframes nod {
+  0%{
+    transform: translateY(0px);
+
+  }
+
+ 100%{
+  transform: translateY(-10px);
+ }
+}
+
+.flickingAnimation{
+ opacity: 0;
+ animation: flicker 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 2500ms 1 forwards ;
+}
+
+@keyframes  flicker{
+  0%{
+    opacity: 0;
+  }
+  10%{
+     @apply font-extrabold;
+    opacity: 1;
+    text-shadow: 2px 2px 20px #EEEEEE;
+
+  }
+  15%{
+    opacity: 0;
+
+  }
+  20%{
+     @apply font-extrabold;
+    opacity: 1;
+    text-shadow: 2px 2px 20px #EEEEEE;
+  }
+  25%{
+    opacity: 0;
+
+  }
+   30%{
+    @apply font-extrabold;
+    opacity: 1;
+     text-shadow: 2px 2px 20px #EEEEEE;
+  }
+  40%{
+    opacity: 0;
+  }
+  99%{
+    opacity: 0;
+  }
+
+  100%{
+    @apply font-normal;
+    opacity: 1;
+
+  }
+}
+
+
+.AnimateUp{
+   animation: slideFromUp 1s ease-in-out 0s 1 forwards ;
+}
+
+@keyframes slideFromUp {
+  0%{
+
+    transform: translateY(-100vh);
+  }
+  100%{
+
+    transform: translateY(0vh);
+  }
+  
+}
+
+
+.RotateToPlace{
+  opacity: 0;
+  animation: rotatePlace 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s 1 forwards ;
+}
+
+@keyframes rotatePlace {
+  0%{
+    transform:  scale(0,0) rotateZ(-20deg);
+    
+  }
+  100%{
+    opacity: 1;
+     transform:  scale(1,1) rotateZ(0deg);
+  }
+}
+
+
+.rotate360{
+  opacity: 0;
+  animation: rotateX 1200ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 1500ms 1 forwards ;
+  transform-style: preserve-3d;
+}
+
+
+@keyframes rotateX {
+  0%{
+    opacity: 0;
+    transform:  rotateX(-360deg);
+  }
+  100%{
+    opacity: 1;
+    transform:  rotateX(0deg);
+  }
+}
+
+
+/* Contact Us Component */
+
+.contactUs{
+  opacity: 0;
+ animation: contactAnimate 1500ms ease-in-out 1s 1 forwards;
+}
+
+@keyframes contactAnimate {
+  0%{
+    transform: translateX(-100px);
+  }100%{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+
+}
