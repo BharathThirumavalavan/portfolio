@@ -26,9 +26,6 @@ export default function Home() {
           setTitle('Reach Me')
         }
       }, 1000)
-      console.log(color)
-
-      
     }, [isActive])
   return (
     <div>
